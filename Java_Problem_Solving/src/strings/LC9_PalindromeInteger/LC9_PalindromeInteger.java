@@ -1,4 +1,4 @@
-package strings;
+package strings.LC9_PalindromeInteger;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
