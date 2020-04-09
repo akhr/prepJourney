@@ -12,6 +12,13 @@ import org.junit.Test;
  *
  */
 public class Knapsack_0_1_DP_Top_Down {
+	/* Top-Down 
+	 * - USE RECURSION
+	 * - Move from ROOT to LEAF 
+	 * - Calculate LEAF result and return to PARENT. 
+	 * - Walk BACK to ROOT
+	 * - DFS
+	*/
 	
 	/*
 	 * T(N) = N * C
@@ -21,6 +28,13 @@ public class Knapsack_0_1_DP_Top_Down {
 	 * This means that our time complexity will be O(N*C).
 	 * The above algorithm will use O(N*C) space for the memoization array. 
 	 * Other than that we will use O(N) space for the recursion call-stack. So the total space complexity will be O(N*C + N), which is asymptotically equivalent to O(N*C).
+	 */
+	
+	/*
+		 Items A, B, C, D
+		 int[] profits = {1, 6, 10, 16};
+		 int[] weights = {1, 2, 3, 5};
+		 Capacity = 7kgs
 	 */
 
 	public static int solveKnapsack(int[] profits, int[] weights, int capacity) {
