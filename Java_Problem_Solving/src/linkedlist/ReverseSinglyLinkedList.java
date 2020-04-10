@@ -16,7 +16,7 @@ public class ReverseSinglyLinkedList {
 		}
 	}
 
-	public Node reverse(Node head) {
+	public Node reverse_iterative(Node head) {
 		Node prev, curr, next;
 		prev = null;
 		curr = head;
@@ -28,6 +28,18 @@ public class ReverseSinglyLinkedList {
 		}
 		return prev;
 	}
+	
+	public Node reverse_recursive(Node head) {
+		Node me = head;
+		if (me == null || me.next == null) {
+			return head;
+		}
+		
+		Node reversedHead = reverse_recursive(head.next);
+		me.next.next = me;
+		me.next = null;
+		return reversedHead;
+	}
 
 	@Test
 	public void Test_1(){
@@ -37,7 +49,25 @@ public class ReverseSinglyLinkedList {
 			System.out.printf("%s --> ", curr.data);
 			curr = curr.next;
 		}
-		Node reversed = reverse(head);
+		Node reversed = reverse_iterative(head);
+		assertNotNull(reversed);
+		curr = reversed;
+		System.out.println();
+		while(curr != null) {
+			System.out.printf("%s --> ", curr.data);
+			curr = curr.next;
+		}
+	}
+	
+	@Test
+	public void Test_2(){
+		Node head = new Node("1", new Node("2", new Node("3", new Node("4", null))));
+		Node curr = head;
+		while(curr != null) {
+			System.out.printf("%s --> ", curr.data);
+			curr = curr.next;
+		}
+		Node reversed = reverse_recursive(head);
 		assertNotNull(reversed);
 		curr = reversed;
 		System.out.println();
