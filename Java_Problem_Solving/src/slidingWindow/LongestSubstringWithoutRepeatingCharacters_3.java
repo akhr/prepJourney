@@ -5,7 +5,7 @@ package slidingWindow;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Test;
@@ -21,23 +21,18 @@ public class LongestSubstringWithoutRepeatingCharacters_3 {
 			return 0;
 		}
 		
-		Map<Character, Integer> charIndxMap = new LinkedHashMap<>();
+		Map<Character, Integer> charIndxMap = new HashMap<>();
 		int left, right, maxLen;
 		left = right = 0;
 		maxLen = 1;
 		
 		while(right < s.length()) {
 			char c = s.charAt(right);
-			if (!charIndxMap.containsKey(c)) {
-				charIndxMap.put(c, right);
-			}else {
-				while(charIndxMap.containsKey(c)) {
-					Map.Entry<Character, Integer> leftmost = charIndxMap.entrySet().iterator().next();
-					charIndxMap.remove(leftmost.getKey());
-					left = leftmost.getValue() + 1;
-				}
-				charIndxMap.put(c, right);
+			if (charIndxMap.containsKey(c)) {
+				int lastIndexOfThisChar = charIndxMap.get(c);
+				left = Math.max(left, lastIndexOfThisChar + 1);
 			}
+			charIndxMap.put(c, right);
 			maxLen = Math.max(maxLen, right - left + 1);
 			right++;
 		}
