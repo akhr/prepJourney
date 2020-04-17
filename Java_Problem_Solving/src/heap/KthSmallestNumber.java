@@ -14,7 +14,7 @@ public class KthSmallestNumber {
 		Queue<Integer> q = new PriorityQueue<>(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				return o1 - o2;
+				return o2 - o1;
 			}
 		});
 		
@@ -33,9 +33,26 @@ public class KthSmallestNumber {
 	
 	@Test
 	public void test_01() {
-		int[] nums = new int[]{3,2,3,1,2,4,5,5,6,-1,-2,-54,200, 40,-55};
-		int expected = -55;
-		assertEquals(expected, findKthSmallestNumber(nums, 4));
+		int[] nums = new int[]{1, 5, 12, 2, 11, 5};
+		int k = 3;
+		int expected = 5;
+		assertEquals(expected, findKthSmallestNumber(nums, k));
+	}
+	
+	@Test
+	public void test_02() {
+		int[] nums = new int[]{1, 5, 12, 2, 11, 6};
+		int k = 4;
+		int expected = 6;
+		assertEquals(expected, findKthSmallestNumber(nums, k));
+	}
+	
+	@Test
+	public void test_03() {
+		int[] nums = new int[]{5, 12, 11, -1, 12};
+		int k = 3;
+		int expected = 11;
+		assertEquals(expected, findKthSmallestNumber(nums, k));
 	}
 
 }
