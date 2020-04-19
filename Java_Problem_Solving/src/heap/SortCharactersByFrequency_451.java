@@ -19,6 +19,9 @@ import org.junit.Test;
  */
 public class SortCharactersByFrequency_451 {
 	public String frequencySort(String s) {
+		if (s == null || s.isBlank())
+			return s;
+		
 		Map<Character, Integer> freqMap = new HashMap<>();
 		for(char c : s.toCharArray()) {
 			freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
