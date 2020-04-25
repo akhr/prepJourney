@@ -14,7 +14,7 @@ import org.junit.Test;
  * @author Akhash Ramamurthy
  *
  */
-public class LevelOrderTraversal {
+public class BinaryTreeLevelOrderTraversal_102 {
 
 	public class Node {
 		int val;
@@ -55,7 +55,7 @@ public class LevelOrderTraversal {
 	    root.left.left = new Node(9);
 	    root.right.left = new Node(10);
 	    root.right.right = new Node(5);
-	    List<List<Integer>> result = LevelOrderTraversal.traverse(root);
+	    List<List<Integer>> result = BinaryTreeLevelOrderTraversal_102.traverse(root);
 	    System.out.println("Level order traversal: " + result);
 	}
 
