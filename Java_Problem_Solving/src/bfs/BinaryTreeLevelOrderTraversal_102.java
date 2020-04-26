@@ -26,7 +26,7 @@ public class BinaryTreeLevelOrderTraversal_102 {
 
 	public static List<List<Integer>> traverse(Node root){
 		if (root == null) {
-			return null;
+			return new ArrayList<>();
 		}
 		List<List<Integer>> res = new ArrayList<>();
 		Queue<Node> q = new LinkedList<>();
