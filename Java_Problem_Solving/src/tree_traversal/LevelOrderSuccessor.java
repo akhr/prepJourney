@@ -1,7 +1,7 @@
 /**
  * @authour Akhash Ramamurthy
  */
-package bfs;
+package tree_traversal;
 
 import java.util.LinkedList;
 import java.util.Queue;

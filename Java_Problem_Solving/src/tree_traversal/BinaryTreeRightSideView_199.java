@@ -1,7 +1,7 @@
 /**
  * @authour Akhash Ramamurthy
  */
-package bfs;
+package tree_traversal;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

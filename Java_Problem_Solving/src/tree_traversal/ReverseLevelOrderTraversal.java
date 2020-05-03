@@ -1,7 +1,7 @@
 /**
  * @authour Akhash Ramamurthy
  */
-package bfs;
+package tree_traversal;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -10,7 +10,7 @@ import java.util.Queue;
 
 import org.junit.Test;
 
-import bfs.BinaryTreeLevelOrderTraversal_102.Node;
+import tree_traversal.BinaryTreeLevelOrderTraversal_102.Node;
 
 /**
  * @author Akhash Ramamurthy
