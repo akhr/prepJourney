@@ -20,7 +20,9 @@ import org.junit.Test;
  * Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
  */
 public class InsertInterval_57 {
+	//Time complexity : O(N) since it's one pass along the input array.
 
+	//Space complexity : O(N) to keep the output.
 
 	public int[][] insert(int[][] intervals, int[] newInterval) {
 		if (intervals.length == 0) return new int[][] {newInterval};
