@@ -40,12 +40,28 @@ public class MinimumSizeSubarraySum_209 {
 		return minLen == Integer.MAX_VALUE ? 0 : minLen;
 	}
 
+	public int minSubArrayLen_refactored(int s, int[] nums) {
+		if(nums.length == 0) return 0;
+		int minLen = Integer.MAX_VALUE, left=0, right=0, sum=0;
+
+		while(right < nums.length) {
+			sum += nums[right++];
+			while(sum >= s) {
+				minLen = Math.min(minLen, right-left);
+				sum -= nums[left++];
+			}
+		}
+		return minLen==Integer.MAX_VALUE ? 0 : minLen;
+	}
+	
+	
 	@Test
 	public void Test_01() {
 		int[] nums = {2,3,1,2,4,3};
 		int s = 7;
 		int expected = 2;
 		assertEquals(expected, minSubArrayLen(s, nums));
+		assertEquals(expected, minSubArrayLen_refactored(s, nums));
 	}
 
 	@Test
@@ -54,6 +70,7 @@ public class MinimumSizeSubarraySum_209 {
 		int s = 213;
 		int expected = 8;
 		assertEquals(expected, minSubArrayLen(s, nums));
+		assertEquals(expected, minSubArrayLen_refactored(s, nums));
 	}
 
 	@Test
@@ -62,6 +79,7 @@ public class MinimumSizeSubarraySum_209 {
 		int s = 3;
 		int expected = 0;
 		assertEquals(expected, minSubArrayLen(s, nums));
+		assertEquals(expected, minSubArrayLen_refactored(s, nums));
 	}
 
 }
