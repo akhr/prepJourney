@@ -17,6 +17,8 @@ public class BestTimetoBuyandSellStock_121 {
 		int maxProfit = 0;
 		for (int currPrice : prices) {
 			minPrice = Math.min(minPrice, currPrice);
+			//Greedy - Calculate the local optimal solution in hope to find the global optimal solution.
+			//No reconsideration of choice made
 			int currLocalProfit = currPrice - minPrice;
 			maxProfit = Math.max(maxProfit, currLocalProfit);
 		}
