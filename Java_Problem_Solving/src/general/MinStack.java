@@ -3,8 +3,6 @@
  */
 package general;
 
-import linkedlist.ReverseNodeInAlternateKGroup.ListNode;
-
 /**
  * @author ramamurthy
  *
