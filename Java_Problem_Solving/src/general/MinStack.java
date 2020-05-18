@@ -3,7 +3,7 @@
  */
 package general;
 
-import inplace_reverse_linkedlist.ReverseNodeInAlternateKGroup.ListNode;
+import linkedlist.ReverseNodeInAlternateKGroup.ListNode;
 
 /**
  * @author ramamurthy
