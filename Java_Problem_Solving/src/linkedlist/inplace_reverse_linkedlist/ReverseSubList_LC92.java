@@ -1,4 +1,4 @@
-package inplace_reverse_linkedlist;
+package linkedlist.inplace_reverse_linkedlist;
 
 import org.junit.Test;
 

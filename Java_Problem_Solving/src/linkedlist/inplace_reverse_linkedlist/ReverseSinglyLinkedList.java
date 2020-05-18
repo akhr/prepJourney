@@ -1,4 +1,4 @@
-package inplace_reverse_linkedlist;
+package linkedlist.inplace_reverse_linkedlist;
 
 import static org.junit.Assert.assertNotNull;
 

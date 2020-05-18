@@ -1,11 +1,9 @@
 /**
  * 
  */
-package inplace_reverse_linkedlist;
+package linkedlist.inplace_reverse_linkedlist;
 
 import org.junit.Test;
-
-import inplace_reverse_linkedlist.ReverseSubList_LC92.ListNode;
 
 /**
  * @author ramamurthy

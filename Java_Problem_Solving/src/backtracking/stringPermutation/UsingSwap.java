@@ -1,7 +1,7 @@
 /**
  * 
  */
-package backtracking_print_all.stringPermutation;
+package backtracking.stringPermutation;
 
 import org.junit.Test;
 
