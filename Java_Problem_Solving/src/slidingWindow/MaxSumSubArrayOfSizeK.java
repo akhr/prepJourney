@@ -40,12 +40,26 @@ public class MaxSumSubArrayOfSizeK {
 		return maxSum;
 	}
 	
+	public static int findMaxSumSubArray_refactored(int k, int[] nums) {
+		if (k == 0 || nums.length == 0 || nums.length<k) return -1;
+		int left=0, right=0, maxSum=Integer.MIN_VALUE, sum=0;
+		while(right < nums.length) {
+			sum += nums[right++];
+			if(right-left == k) {
+				maxSum = Math.max(maxSum, sum);
+				sum -= nums[left++];
+			}
+		}
+		return maxSum;
+	}
+	
 	@Test
 	public void Test_01() {
 		int[] arr = {2, 1, 5, 1, 3, 2};
 		int k = 3;
 		int expected = 9;
 		Assert.assertEquals(expected, findMaxSumSubArray(k , arr));
+		Assert.assertEquals(expected, findMaxSumSubArray_refactored(k , arr));
 	}
 	
 	@Test
@@ -54,5 +68,6 @@ public class MaxSumSubArrayOfSizeK {
 		int k = 2;
 		int expected = 7;
 		Assert.assertEquals(expected, findMaxSumSubArray(k , arr));
+		Assert.assertEquals(expected, findMaxSumSubArray_refactored(k , arr));
 	}
 }
